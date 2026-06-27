@@ -1,0 +1,23 @@
+{
+  "title": "The Starving GPU: Why Is an Expensive GPU Only 25% Utilized?",
+  "description": "AI infra diagnosis lab: training is running but the H100 sits idle. Find the bottleneck and fix it. Fully simulated — no physical GPU needed.",
+  "details": {
+    "intro": {
+      "title": "Briefing",
+      "text": "intro/text.md",
+      "background": "intro/background.sh"
+    },
+    "steps": [
+      { "title": "See the Problem", "text": "step1/text.md", "verify": "step1/verify.sh" },
+      { "title": "Find the Root Cause", "text": "step2/text.md", "verify": "step2/verify.sh" },
+      { "title": "Fix It & Prove It", "text": "step3/text.md", "verify": "step3/verify.sh" }
+    ],
+    "finish": {
+      "title": "Done",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

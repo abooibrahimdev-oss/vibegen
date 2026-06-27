@@ -1,0 +1,23 @@
+{
+  "title": "Your First Bedrock Call: One API, Many Foundation Models",
+  "description": "Applied-AI lab: call a foundation model on AWS Bedrock. Learn the invoke request shape (modelId + body + params), read the response, and tune it. Fully simulated -- no AWS account, no cost.",
+  "details": {
+    "intro": {
+      "title": "Briefing",
+      "text": "intro/text.md",
+      "background": "intro/background.sh"
+    },
+    "steps": [
+      { "title": "See the Models", "text": "step1/text.md", "verify": "step1/verify.sh" },
+      { "title": "Invoke a Model", "text": "step2/text.md", "verify": "step2/verify.sh" },
+      { "title": "Tune the Call", "text": "step3/text.md", "verify": "step3/verify.sh" }
+    ],
+    "finish": {
+      "title": "Done",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

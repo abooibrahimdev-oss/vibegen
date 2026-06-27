@@ -1,0 +1,23 @@
+{
+  "title": "Deploy Your First AI Model on Kubernetes",
+  "description": "Serving a trained model is just running it as a scalable service. Deploy a model server on a REAL Kubernetes cluster, call it for a prediction, then scale it to handle more inference traffic.",
+  "details": {
+    "intro": {
+      "title": "Briefing",
+      "text": "intro/text.md",
+      "background": "intro/background.sh"
+    },
+    "steps": [
+      { "title": "Deploy the Model", "text": "step1/text.md", "verify": "step1/verify.sh" },
+      { "title": "Expose & Call It", "text": "step2/text.md", "verify": "step2/verify.sh" },
+      { "title": "Scale for Load", "text": "step3/text.md", "verify": "step3/verify.sh" }
+    ],
+    "finish": {
+      "title": "Done",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "title": "RAG in 15 Minutes with Claude",
+  "description": "Build a real, runnable Retrieval-Augmented Generation loop in pure Python. Watch a mock LLM hallucinate without context, then ground its answer once a retriever feeds it the right document. Stdlib only - no API key, no installs.",
+  "details": {
+    "intro": {
+      "title": "Briefing",
+      "text": "intro/text.md",
+      "background": "intro/background.sh"
+    },
+    "steps": [
+      { "title": "Ask Without RAG", "text": "step1/text.md", "verify": "step1/verify.sh" },
+      { "title": "Add Retrieval", "text": "step2/text.md", "verify": "step2/verify.sh" },
+      { "title": "See Where It Breaks", "text": "step3/text.md", "verify": "step3/verify.sh" }
+    ],
+    "finish": {
+      "title": "Done",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
