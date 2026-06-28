@@ -65,4 +65,8 @@ RAG is how you make a general LLM answer correctly about **your** product, docs,
 
 ---
 
-**Next lab:** *"Give Claude tools — your first AI agent"* — we move from *retrieving* context to letting the model *take actions*. See you there! 🚀
+🎓 **That's the Applied AI Builder track** — you can call a foundation model and ground it in your own data. The next step is to put it all together.
+
+**Coming next — the Capstone (in build):** *"Chat with Your Docs, Served"* — wrap this exact retrieval loop in a real Claude call and deploy it on Kubernetes (the skeleton from the *Deploy a Model on Kubernetes* lab), so you finish with one deployable service you can show a recruiter.
+
+In the meantime: test yourself on the free **NCA-AIIO exam simulator** at **vibegen.id**, and grab the proof writeup above for your portfolio. 🚀

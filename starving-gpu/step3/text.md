@@ -36,13 +36,13 @@ nvidia-smi
 
 ### 3. See the nuance for yourself (optional but recommended)
 
-This is where juniors stop and seniors keep going. Try **overshooting**:
+This is where juniors stop and seniors keep going. **Before you run the next line, predict:** will 64 workers beat 8? Try **overshooting**:
 
 ```
 sed -i 's/^num_workers:.*/num_workers: 64/' /root/training/train_config.yaml && retrain
 ```{{exec}}
 
-Notice util **stops improving** once the pipeline already keeps up — extra workers add no further gain (and here, added startup/scheduling latency makes it dip). In **real** training, too many workers also cause RAM blowup and `/dev/shm` contention — same lesson: **diminishing, then negative, returns.** Put it back to 8:
+Notice util **plateaus** — once the data pipeline already keeps the GPU fed, extra workers add **no further gain**. The GPU is now the bottleneck, not the loader, so throwing more workers at it does nothing. In **real** training it gets *worse* than nothing: too many workers cause RAM blowup, `/dev/shm` contention, and scheduling overhead — **diminishing, then negative, returns.** Put it back to 8:
 
 ```
 sed -i 's/^num_workers:.*/num_workers: 8/' /root/training/train_config.yaml && retrain

@@ -131,7 +131,7 @@ def invoke(args):
 
     completion = gen_completion(prompt, model_id)
     words = completion.split()
-    stop_reason = "stop"
+    stop_reason = "end_turn"
     # honor a tiny max_tokens by truncating (1 word ~= 1 token here, for teaching)
     if max_tokens < len(words):
         completion = " ".join(words[:max(1, max_tokens)]) + " ..."

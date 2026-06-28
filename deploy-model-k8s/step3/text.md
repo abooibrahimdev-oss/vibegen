@@ -10,19 +10,21 @@ kubectl scale deploy model-server --replicas=3
 
 That's it — you changed the *desired state*. The Deployment now works to make reality match.
 
-### 2. Watch the new Pods come up
+### 2. Wait for the new Pods to come up
+
+The clean, non-blocking way — this returns on its own the moment all three are ready (no Ctrl+C needed):
 
 ```
-kubectl get pods -w
+kubectl wait --for=condition=ready pod -l app=model-server --timeout=60s
 ```{{exec}}
 
-You'll see two new Pods appear and move to `1/1 Running` as their readiness probes pass. Press **Ctrl+C** when all three are `Running`.
+Prefer to *watch* it happen live instead? Run `kubectl get pods -w` — but note it **keeps running**, so press **Ctrl+C** once all three show `1/1 Running`.
 
 ```
 kubectl get deploy model-server
 ```{{exec}}
 
-`READY 3/3` — three replicas, ready for ~3x the inference throughput, and if one Pod dies the other two keep serving (high availability).
+`READY 3/3` — three replicas, ready for up to ~3x the throughput (near-linear while each replica is the bottleneck; real-world scaling is somewhat sub-linear), and if one Pod dies the other two keep serving (high availability).
 
 ### 3. See the Service now spans all 3
 

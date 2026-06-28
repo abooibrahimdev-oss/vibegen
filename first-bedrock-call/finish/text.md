@@ -52,4 +52,4 @@ This is Lab 1 of **The Vibe Generation — "Applied AI Builder" track**: learn a
 
 **Real-cloud next step (when you're ready):** install the real AWS CLI, run `aws configure`, request model access in the Bedrock console, and run the *exact same commands* you just learned — only now they bill your account, so mind `max_tokens`.
 
-**Next lab:** *"Ground Your Model: A First RAG Retrieval"* — we stop the model from guessing and feed it your own documents. See you there! 🚀
+**Next lab:** *"RAG in 15 Minutes with Claude"* — we stop the model from guessing and feed it your own documents, so it answers from real facts instead of making things up. See you there! 🚀

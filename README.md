@@ -8,6 +8,8 @@ Format rules: bite-sized · no video · text + image + hands-on + auto-verify.
 |--------|-------|-------|
 | `starving-gpu/` | The Starving GPU: Why Is an Expensive GPU Only 25% Utilized? | AI infra/ops (NVIDIA) |
 | `deploy-model-k8s/` | Deploy Your First AI Model on Kubernetes | Model serving (Kubernetes) |
+| `first-bedrock-call/` | Your First Bedrock Call | Applied AI Builder (foundation models) |
+| `prompt-engineering/` | Prompt Engineering: Same Model, Better Answers | Applied AI Builder (LLM prompting) |
 | `rag-with-claude/` | RAG in 15 Minutes with Claude | Applied AI Builder (Claude) |
 
 ---

@@ -1,0 +1,23 @@
+{
+  "title": "Prompt Engineering: Same Model, Better Answers",
+  "description": "Applied-AI lab: turn an LLM's vague, unusable output into reliable, structured results by changing only the prompt. Practice the three highest-leverage techniques -- specificity, forcing a format, and few-shot examples. Fully simulated -- no API key, no cost.",
+  "details": {
+    "intro": {
+      "title": "Briefing",
+      "text": "intro/text.md",
+      "background": "intro/background.sh"
+    },
+    "steps": [
+      { "title": "Be Specific", "text": "step1/text.md", "verify": "step1/verify.sh" },
+      { "title": "Force the Format", "text": "step2/text.md", "verify": "step2/verify.sh" },
+      { "title": "Show, Don't Tell (few-shot)", "text": "step3/text.md", "verify": "step3/verify.sh" }
+    ],
+    "finish": {
+      "title": "Done",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

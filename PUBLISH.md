@@ -5,7 +5,7 @@ Per the build-local rule, these are your explicitly-approved steps. Back up befo
 
 ---
 
-## A. Publish the 4 labs to KillerCoda
+## A. Publish the 5 labs to KillerCoda
 
 Live labs (all tested, English, 3-pillar bundles):
 | Folder | Scenario | Backend |
@@ -13,6 +13,7 @@ Live labs (all tested, English, 3-pillar bundles):
 | `starving-gpu/` | The Starving GPU | ubuntu |
 | `deploy-model-k8s/` | Deploy a Model on Kubernetes | kubernetes-kubeadm-1node |
 | `first-bedrock-call/` | Your First Bedrock Call | ubuntu |
+| `prompt-engineering/` | Prompt Engineering: Same Model, Better Answers | ubuntu |
 | `rag-with-claude/` | RAG with Claude | ubuntu |
 
 Steps:
@@ -58,3 +59,16 @@ Replace **USERNAME** with your KillerCoda username. Done — all four live lab c
 ## Not yet (deferred by design — gate on proof)
 - Accounts / "Sign in with Google to save progress" → Phase 2, after deploy shows people show up.
 - Paid exam bank + checkout → Phase 3, after the engagement bar is hit.
+
+---
+
+## Product review pass (2026-06-28) — applied
+
+4 persona reviewers ran on the **product** (labs + exam bank), not the page. Fixes applied:
+- **starving-gpu:** step1 verify accepts 24–26 (log shows all three); rewrote the "watch it dip @ 64 workers" claim → it *plateaus* (the sim never dips); added a predict-before-you-run beat; fixed the proof template's mislabeled "3.6x throughput" → "~3.7x utilization".
+- **deploy-model-k8s:** softened the unhedged "3x throughput" → "up to ~3x, sub-linear in practice" (3 files); qualified "just swap the image" (real GPU serving also needs a `nvidia.com/gpu` limit + model volume); added a non-blocking `kubectl wait` next to the blocking `-w`.
+- **first-bedrock-call:** mock response `stop_reason` "stop" → "end_turn" (current Messages-API value); synced step3 copy.
+- **Exam bank:** 22 → **32 questions**. Replaced give-away distractors (Q1/Q2/Q15/Q6/Q16); relabeled TensorRT q "AI Ops" → "NVIDIA Stack"; **added 10 Applied-AI/Essential-AI questions** (RAG ×2, Bedrock ×2, embeddings, supervised/unsupervised, overfitting, data-vs-model parallelism, drift) so the RAG + Bedrock labs finally have matching exam coverage. Balance now Essential 34% / Infra 31% / Ops 22% / Stack 13% (was Essential 14%). Softened the "50+ coming soon" results note.
+- **README:** added the missing `first-bedrock-call` row.
+
+**Deferred (bigger product redesign, next session):** per-lab learning objectives + prerequisites headers; a capstone lab that fuses RAG + a real Claude call + K8s serving; cross-lab progress tracking / completion badge / certificate (tie to the existing Firestore email capture); one deliberate fix-it-yourself beat in deploy/rag/bedrock; build or stop teasing the fictional "next labs" in the finish files.

@@ -31,7 +31,7 @@ echo "--- original (max_tokens 200) ---"; cat out.json
 echo "--- tuned (max_tokens 12) ---"; cat out2.json
 ```{{exec}}
 
-See it? The tuned `completion` is **cut off**, and `stop_reason` flipped from `stop` to **`max_tokens`** — the model hit your length cap mid-thought. That single number controls cost and latency: fewer tokens = cheaper and faster, but watch for truncation.
+See it? The tuned `completion` is **cut off**, and `stop_reason` flipped from `end_turn` (the model finished on its own) to **`max_tokens`** (it hit your length cap mid-thought). That single number controls cost and latency: fewer tokens = cheaper and faster, but watch for truncation.
 
 ### 4. (Optional) Feel temperature
 

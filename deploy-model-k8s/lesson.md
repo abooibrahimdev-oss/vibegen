@@ -27,7 +27,7 @@ I'm the smallest unit that actually *runs*. Inside me is your **model-server con
 I'm the *manager* who keeps Pods alive. You tell me **"I want 3 of these running"** and I make it true — and keep it true. A Pod dies? I start another. You want a new model version? I roll Pods over one at a time with zero downtime. You never hand-start a Pod in production; you tell **me** the desired state and I converge to it. The Pod is the cook; I'm the shift manager who guarantees the right number of cooks are always on the line.
 
 ### 🔢 "I am replicas"
-I'm just a number on the Deployment — but a powerful one. `replicas: 1` means one cook, so orders queue up behind each other. `replicas: 3` means three identical cooks working in parallel: **3x the inference throughput** and, if one falls over, the other two keep serving (high availability). More load? Raise me.
+I'm just a number on the Deployment — but a powerful one. `replicas: 1` means one cook, so orders queue up behind each other. `replicas: 3` means three identical cooks working in parallel: **up to ~3x the throughput** (near-linear while each replica is the bottleneck — real scaling is a bit sub-linear once a shared resource or the load-balancer kicks in) and, if one falls over, the other two keep serving (high availability). More load? Raise me.
 
 ### 🚪 "I am the Service"
 Pods come and go, and each gets a *different* IP every time it restarts. If clients had to track those, serving would be chaos. So I am the **one stable address** — a fixed ClusterIP and DNS name — that never changes. Clients only ever talk to me, and I **load-balance** each request across whichever Pods are healthy right now. I'm the front counter; the customer never needs to know which cook made their dish.
@@ -45,7 +45,7 @@ Every serious model-serving stack is **this same shape**, just with a heavier co
 - **NVIDIA Triton Inference Server** — batches requests, runs multiple models on a GPU.
 - **NVIDIA NIM** — pre-packaged, optimized model microservices.
 
-Swap the image, keep the **Deployment + Service + replicas** skeleton. Learn the skeleton once and you can serve anything.
+Swap the image, keep the **Deployment + Service + replicas** skeleton. Learn the skeleton once and you can serve anything. (A real GPU model server adds a few things on top of the same skeleton — a `resources: {limits: {nvidia.com/gpu: 1}}` request, the GPU device plugin, a model-weights volume, and far more memory — but the Deployment/Service/replicas shape you're learning here doesn't change.)
 
 ## 📈 Scaling: manual today, automatic tomorrow
 

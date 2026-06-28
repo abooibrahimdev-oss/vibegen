@@ -48,7 +48,7 @@ You should get your prediction back:
 {"label":"cat","confidence":0.97}
 ```
 
-🎉 That round-trip — `client -> Service -> Pod -> prediction` — is **exactly** what a production inference call looks like. Swap the echo image for Triton or NIM and the request path is unchanged.
+🎉 That round-trip — `client -> Service -> Pod -> prediction` — is **exactly** what a production inference call looks like. Swap the echo image for Triton or NIM and the request path is unchanged. (The real server also needs a GPU resource limit and a model volume — but the client-to-Service-to-Pod path you just exercised stays identical.)
 
 > 💡 **Why a Service and not the Pod IP?** Pods are disposable; their IPs change. The Service is the one address that survives Pod restarts, rollouts, and scaling — and it spreads load across every replica for free.
 

@@ -7,7 +7,7 @@ You took a "trained model" from a container image to a **running, callable, hori
 - Model serving = a **stateless, scalable service**. That's why Kubernetes fits it perfectly.
 - **`replicas`** turns one model server into many for more throughput + high availability — and an **HPA** can do it automatically under load.
 - **Readiness probes** keep scaling and rollouts safe: no request hits a Pod that isn't ready.
-- The exact same Deployment + Service + replicas pattern serves **Triton / NVIDIA NIM** in production — you just swap the image.
+- The same Deployment + Service + replicas pattern serves **Triton / NVIDIA NIM** in production — you swap the image and add a GPU resource limit + a model-weights volume; the skeleton is unchanged.
 
 ---
 
@@ -30,7 +30,8 @@ curl -s http://$CLUSTER_IP:80
 
 Served a model as a scalable K8s service: a Deployment running the model-server
 container, a Service load-balancing across replicas, scaled 1 -> 3 for more
-inference throughput. Same pattern used for Triton / NVIDIA NIM in production.
+inference throughput (up to ~3x; sub-linear in practice). Same pattern used for
+Triton / NVIDIA NIM in production.
 
 ## Proof
 - `deployment.yaml` / `service.yaml` (in this repo)
@@ -46,4 +47,4 @@ Two lines of writeup + your YAML + the `kubectl get` output + the prediction res
 
 ---
 
-**Next lab:** *"Serve a real GPU model with NVIDIA Triton"* — we keep this exact Deployment + Service + HPA skeleton and swap the toy echo container for a real inference server on a GPU. Same pattern, real model. See you there! 🚀
+**Next up — start the Applied AI Builder track:** *"Your First Bedrock Call"* — you've learned to *serve* models; now learn to *build with* them. Same skeleton you just used carries straight over to serving a real Triton/NIM model on a GPU once that lab ships. See you there! 🚀

@@ -23,7 +23,7 @@ Don't let this evaporate — turn it into portfolio evidence an interviewer can 
 Symptom : GPU-Util 25%, power 118W/700W during ResNet training
 Cause   : data loader bottleneck — num_workers=1 on an 8-vCPU node (data_wait >> compute)
 Fix     : raised num_workers to 8
-Result  : measured GPU-Util 25% -> ~92%, ~3.6x throughput, no new hardware
+Result  : measured GPU-Util 25% -> ~92% (~3.7x utilization), much higher throughput, no new hardware
 Caveat  : GPU-Util = kernel-active time, not SM efficiency; confirmed with the benchmark
 ```
 
