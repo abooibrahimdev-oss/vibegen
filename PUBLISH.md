@@ -5,7 +5,7 @@ Per the build-local rule, these are your explicitly-approved steps. Back up befo
 
 ---
 
-## A. Publish the 5 labs to KillerCoda
+## A. Publish the 6 labs to KillerCoda
 
 Live labs (all tested, English, 3-pillar bundles):
 | Folder | Scenario | Backend |
@@ -14,6 +14,7 @@ Live labs (all tested, English, 3-pillar bundles):
 | `deploy-model-k8s/` | Deploy a Model on Kubernetes | kubernetes-kubeadm-1node |
 | `first-bedrock-call/` | Your First Bedrock Call | ubuntu |
 | `prompt-engineering/` | Prompt Engineering: Same Model, Better Answers | ubuntu |
+| `vector-search/` | Vector Search From Scratch | ubuntu |
 | `rag-with-claude/` | RAG with Claude | ubuntu |
 
 Steps:

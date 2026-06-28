@@ -10,6 +10,7 @@ Format rules: bite-sized · no video · text + image + hands-on + auto-verify.
 | `deploy-model-k8s/` | Deploy Your First AI Model on Kubernetes | Model serving (Kubernetes) |
 | `first-bedrock-call/` | Your First Bedrock Call | Applied AI Builder (foundation models) |
 | `prompt-engineering/` | Prompt Engineering: Same Model, Better Answers | Applied AI Builder (LLM prompting) |
+| `vector-search/` | Vector Search From Scratch | Applied AI Builder (embeddings/retrieval) |
 | `rag-with-claude/` | RAG in 15 Minutes with Claude | Applied AI Builder (Claude) |
 
 ---

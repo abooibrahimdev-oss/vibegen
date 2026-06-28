@@ -1,0 +1,23 @@
+{
+  "title": "Vector Search From Scratch: the Engine Under RAG",
+  "description": "Build the retriever that RAG treats as a black box. Turn text into embeddings, rank documents by cosine similarity, and return the top-k matches for a query -- in pure Python. Watch an off-topic query correctly retrieve nothing. Fully simulated -- no API key, no network, no cost.",
+  "details": {
+    "intro": {
+      "title": "Briefing",
+      "text": "intro/text.md",
+      "background": "intro/background.sh"
+    },
+    "steps": [
+      { "title": "Text to Vectors", "text": "step1/text.md", "verify": "step1/verify.sh" },
+      { "title": "Cosine Similarity", "text": "step2/text.md", "verify": "step2/verify.sh" },
+      { "title": "Top-k Retrieval", "text": "step3/text.md", "verify": "step3/verify.sh" }
+    ],
+    "finish": {
+      "title": "Done",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
